@@ -6,7 +6,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { getSelectedRecipe } from '../../../redux/reducers/selectors';
 import { fetchSelectedRecipe } from '../../../api/recipes/';
 
-const RecipesDetailsScreen = ({route, navigation}) => {
+const RecipesDetailsScreen = ({route}) => {
     const {id} = route.params;
     const dispatch = useDispatch();
 
@@ -30,7 +30,9 @@ useEffect(() => {
            <Text style={styles.title}>{recipe.title}</Text>
            <View style={styles.containerIngredient}>
                 {recipe.extendedIngredients.map(ing => {
-                    return <Text style={styles.ing}>{ing.name}</Text>
+                    
+                        return <Text style={styles.ing}>{ing.name}</Text>
+
                 })}
            </View>
         </ScrollView>
